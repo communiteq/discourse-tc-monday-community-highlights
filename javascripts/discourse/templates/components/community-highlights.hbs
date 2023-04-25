@@ -1,8 +1,14 @@
 {{#if mustShow}}
 <div class="community-highlights-full-width">
     <div class="community-highlights-block" {{did-insert this.onComponentMount}}>
-        <div class="header">Community Highlights</div>
-        <div class="explain">Check out whats new and noteworthy this month in the community. You are not going to want to miss these.</div>
+        <div class="intro">
+            <div class="header">Community Highlights</div>
+            <div class="explain">Check out whats new and noteworthy this month in the community. You are not going to want to miss these.</div>
+            <div class="arrows">
+                <span class="arrow arrow-left" {{on "click" this.decSlide}}>&lt;</span>
+                <span class="arrow arrow-right" {{on "click" this.incSlide}}>&gt;</span>
+            </div>
+        </div>
         <div class="community-highlights-topics-list">
             {{#each highlight_topics as |topic|}}
             <div class="community-highlight-topic">

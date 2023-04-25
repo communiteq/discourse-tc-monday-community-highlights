@@ -6,9 +6,49 @@
 }
 .community-highlights-block {
     width: 50%;
-    overflow-x: hidden;
+    overflow-x: visible;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+
+    .intro {
+        min-width: 30%;
+        padding-right: 40px;
+        background-color: #eceff880;
+
+        .arrows {
+            display: flex;
+            margin-top: 20px;
+            .arrow {
+                width: 40px;
+                height: 40px;
+                border: 1px solid #676879;
+                border-radius: 50%;
+                cursor: pointer;
+                text-align: center;
+                font-size: 2em;
+                margin-right: 15px;
+            }
+            .arrow-left {
+                color: #bbb;
+                border-color: #bbb;
+            }
+        }
+    }
+
+    .community-highlights-topics-list {
+        min-width: 100%;
+        overflow-x: hidden;
+        width: 200%;
+    }
+
+    .community-highlight-topic {
+        min-width: 340px;
+        position: relative;
+
+        left: 0;
+        transition: left 1s;
+    }
 }
 
 .discovery-below-outlet.community-highlights {

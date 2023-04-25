@@ -52,14 +52,49 @@ export default class CommunityHighlights extends Component {
                 indicator.style.borderColor = '#676879';
             }
         });
-      }
 
+        var leftArrow = document.querySelector('.community-highlights .arrows .arrow-left');
+        var c = (index == 0) ? '#bbb' : '#676879';
+        leftArrow.style.borderColor = c;
+        leftArrow.style.color = c;
+
+        var rightArrow = document.querySelector('.community-highlights .arrows .arrow-right');
+        var c = (index >= (this.highlight_topics.length-2)) ? '#bbb' : '#676879';
+        rightArrow.style.borderColor = c;
+        rightArrow.style.color = c;
+    }
+
+    updateDesktopSlides(index)  {
+        const topics = document.querySelectorAll('.community-highlight-topic');
+        topics.forEach((topic, idx) => {
+            topic.style.left = -(topic.offsetWidth + 30) * index + "px";
+            console.log("UDS " + index);
+        });
+    }
     @action
     selectSlide(event) {
         const target = event.target;
         const index = parseInt(target.dataset.index, 10);
         this.updateSlides(index);
         this.updateIndicators(index);
+    }
+
+    @action
+    incSlide(event) {
+        var index = this.index + 1;
+        if (index < this.highlight_topics.length - 1) {
+            this.updateDesktopSlides(index);
+            this.updateIndicators(index);
+        }
+    }
+
+    @action
+    decSlide(event) {
+        var index = this.index - 1;
+        if (index >= 0) {
+            this.updateDesktopSlides(index);
+            this.updateIndicators(index);
+        }
     }
 
     @action
