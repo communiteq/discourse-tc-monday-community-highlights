@@ -1,13 +1,26 @@
-.top-voted-topics {
+.community-highlights-full-width {
+    margin: -10px;
+    padding: 10px;
+    background: #eceff8;
+}
+.community-highlights-block {
     width: 100%;
     overflow-x: hidden;
 
-    .top-voted-topics-list {
+    .header, .explain {
+        padding-left: 10px;
+    }
+
+    .explain {
+        padding-right: 40px;
+        margin-bottom: 40px;
+    }
+
+    .community-highlights-topics-list {
         overflow-x: auto;
         padding: 10px;
-        row-gap: 10px;
 
-        .top-voted-topic {
+        .community-highlight-topic {
             box-sizing: border-box;
             min-width: 85%;
         }

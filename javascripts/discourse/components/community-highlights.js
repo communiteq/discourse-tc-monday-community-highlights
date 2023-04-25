@@ -5,9 +5,9 @@ import { ajax } from "discourse/lib/ajax";
 import { action } from '@ember/object'
 import { bind } from "discourse-common/utils/decorators"
 
-export default class TopVoted extends Component {
+export default class CommunityHighlights extends Component {
     @tracked mustShow = false;
-    @tracked top_voted_topics = [];
+    @tracked highlight_topics = [];
     index = 0;
 
     constructor() {
@@ -20,31 +20,29 @@ export default class TopVoted extends Component {
                     this.mustShow = false;
                 }
                 if (this.mustShow) {
-                    var category_id = settings.vote_category_id;
-                    var tag_name = settings.vote_tag_name;
-
-                    ajax(`/tags/c/vote_component/${category_id}/none/${tag_name}/l/latest.json?order=votes`).then((result) => {
-                        this.top_voted_topics = result.topic_list.topics.slice(0, 3);
-                    });
+                    this.highlight_topics = JSON.parse(settings.highlight_topics);
                 }
             });
         });
-
     }
 
     get showComponent() {
         return this.mustShow;
     }
 
+    get circleNos() {
+        return new Array(this.highlight_topics.length).fill(null).map((_, index) => index);
+    }
+
     updateSlides(index) {
-        const slidesWrapper = document.querySelector('.top-voted-topics-list');
+        const slidesWrapper = document.querySelector('.community-highlights-topics-list');
         const slideWidth = slidesWrapper.offsetWidth;
         slidesWrapper.scrollLeft = index * (slideWidth + 20) * 0.85;
     }
 
     updateIndicators(index) {
         this.index = index;
-        const indicators = document.querySelectorAll('.circle');
+        const indicators = document.querySelectorAll('.community-highlights .circle-indicators .circle');
         indicators.forEach((indicator, idx) => {
             if (idx === index) {
                 indicator.style.backgroundColor = '#6161ff';
@@ -66,7 +64,7 @@ export default class TopVoted extends Component {
 
     @action
     onComponentMount() {
-        const element = document.querySelector('.top-voted-topics-list');
+        const element = document.querySelector('.community-highlights-topics-list');
         element.addEventListener('scroll', (event) => {
           var idx = Math.max(Math.floor(event.target.scrollLeft / 250), 0);
           if (idx != this.index) {

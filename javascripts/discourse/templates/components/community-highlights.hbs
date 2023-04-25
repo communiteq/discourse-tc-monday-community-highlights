@@ -1,0 +1,25 @@
+{{#if mustShow}}
+<div class="community-highlights-full-width">
+    <div class="community-highlights-block" {{did-insert this.onComponentMount}}>
+        <div class="header">Community Highlights</div>
+        <div class="explain">Check out whats new and noteworthy this month in the community. You are not going to want to miss these.</div>
+        <div class="community-highlights-topics-list">
+            {{#each highlight_topics as |topic|}}
+            <div class="community-highlight-topic">
+                <div class="highlight-img" style="background-image: url({{topic.image_url}});"></div>
+                <div class="highlight-title">{{topic.title}}</div>
+                <div class="highlight-text">{{topic.text}}</div>
+                <div class="highlight-link">
+                    <a href="{{topic.url}}">{{ topic.linktext}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="circle-indicators">
+            {{#each this.circleNos as |index|}}
+                <span class="circle" data-index={{index}} {{on "click" this.selectSlide}}></span>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{/if}}

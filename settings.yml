@@ -1,12 +1,7 @@
-vote_category_id:
-  type: string
-  default: "7"
-  description: 
-    en: 'Category ID to select the votes from.'
-vote_tag_name:
-  type: string
-  default: "under-consideration"
-  description: 
-    en: 'Tag name to select the votes from.'
-
+highlight_topics:
+  default: >-
+    [{"title":"Join our Community Event","text":"Discover the latest feature releases, improvements, and updates on web, desktop and mobile apps.","linktext":"Join Now","image_url":"/faq","url":"/faq"},
+    {"title":"Join our Jan Community event","text":"95% OKR adoption rate ","linktext":"Join Now","image_url":"/faq","url":"/about"},
+    {"title":"star","text":"Discover the latest feature releases, improvements, and updates on web, desktop and mobile apps.","linktext":"Join Now","image_url":"/faq","url":"/my/preferences"}]
+  json_schema: '{ "type": "array", "format": "table", "uniqueItems": true, "items": { "type": "object", "properties": { "title": { "type": "string", "minLength": 1 }, "text": { "type": "string", "minLength": 1 }, "linktext": { "type": "string", "minLength": 1 }, "image_url": { "type": "string" }, "url": { "type": "string" } }, "additionalProperties": false } }'
 

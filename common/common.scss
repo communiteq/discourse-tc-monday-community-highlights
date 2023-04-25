@@ -1,53 +1,57 @@
-.top-voted-topics {
+
+.community-highlights-block {
     margin-top: 30px;
     margin-bottom: 20px;
+    background-color: #eceff8;
 
     .header {
         margin-bottom: 10px;
-        font-size: 1.1em;
+        font-size: 37px;
+        font-weight: 500;
     }
 
-    .top-voted-topics-list {
+    .explain {
+        font-size: 16px;
+    }
+
+    .community-highlights-topics-list {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         column-gap: 30px;
     
-        .top-voted-topic {
+        .community-highlight-topic {
             flex: 1;
-            padding: 20px 50px 30px 20px;
+            padding: 0;
+            background-color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
 
-            .vote-count {
-                color: #6161ff;
-                font-size: 18pt;
-                font-weight: bold;
-                margin-bottom: 80px;
+            .highlight-img {
+                height: 190px;
+                background-size: cover;
             }
-            .vote-title {
+
+            .highlight-title {
+                padding: 20px 0px 0px 20px;
                 color: #000;
                 font-weight: bold;
                 font-size: 1.2em;
                 line-height: 1.2;
                 height: 2.4em; 
                 overflow: hidden;
-                margin-bottom: 20px;
-
             }
-            .vote-link {
+            .highlight-text {
+                padding: 20px 0px 0px 20px;
+            }
+            .highlight-link {
+                padding: 20px;
                 a, a:hover, a:visited {
                     color: #000;
                 }
             }
         }
 
-        .top-voted-topic:nth-child(odd) {
-            border: 1px solid #6161ff;
-            border-radius: 4px;
-        }
-        .top-voted-topic:nth-child(even) {
-            background-color: #eceff8;
-            border-radius: 4px;
-        }
     }
 
     .circle-indicators {
