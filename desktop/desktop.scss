@@ -1,12 +1,13 @@
 .community-highlights-full-width {
-    margin-left: -1000px;
-    padding-left: 1000px;
-    width: 200%;
+    margin-left: -2000px;
+    padding-left: 2000px;
+    width: 100%;
+    padding-right: calc(calc(98vw - var(--d-max-width)) / 2);
     background: #eceff8;
 }
 .community-highlights-block {
-    width: 50%;
-    overflow-x: visible;
+    width: 100%;
+    overflow-x: hidden; /* change to visible to make this wider */
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
@@ -18,7 +19,7 @@
 
         .arrows {
             display: flex;
-            margin-top: 20px;
+              margin-top: 20px;
             .arrow {
                 width: 40px;
                 height: 40px;
