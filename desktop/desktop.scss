@@ -4,6 +4,8 @@
     width: 100%;
     padding-right: calc(calc(98vw - var(--d-max-width)) / 2);
     background: #eceff8;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .community-highlights-block {
     width: 100%;
@@ -11,6 +13,12 @@
     padding-top: 32px;
     padding-bottom: 32px;
     display: flex;
+
+    .header {
+        margin-bottom: 10px;
+        font-size: 37px;
+        font-weight: 500;
+    }
 
     .intro {
         min-width: 30%;
@@ -41,6 +49,7 @@
         min-width: 100%;
         overflow-x: hidden;
         width: 200%;
+        column-gap: 30px;
 
         .community-highlight-topic {
             .highlight-title {

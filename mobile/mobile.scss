@@ -1,19 +1,36 @@
 .community-highlights-full-width {
     margin: -10px;
-    padding: 10px;
     background: #eceff8;
 }
 .community-highlights-block {
     width: 100%;
     overflow-x: hidden;
 
+    .intro {
+        padding: 30px;
+    }
+
+    .header {
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 110%; /* 38.5px */
+        letter-spacing: -0.192px;
+        margin-bottom: 30px;
+    }
+
     .header, .explain {
-        padding-left: 10px;
+        font-style: normal;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Poppins;
+        padding-left: 0;
     }
 
     .explain {
-        padding-right: 40px;
-        margin-bottom: 40px;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        margin-bottom: 10px;
     }
 
     .arrows {
@@ -22,15 +39,36 @@
 
     .community-highlights-topics-list {
         overflow-x: auto;
-        padding: 10px;
+        column-gap: 12px;
+        margin-left: 30px;
 
         .community-highlight-topic {
             box-sizing: border-box;
-            min-width: 85%;
+            min-width: 308px;
+
+            .highlight-img {
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .highlight-text {
+                padding-top: 10px;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px; /* 153.846% */
+            }
+            .highlight-link {
+                font-weight: 500;
+                padding-top: 23px;
+                padding-bottom: 28px;
+            }
         }
     }
     .circle-indicators {
         display: flex;
+        margin-top: 25px;
+        margin-bottom: 40px;
     }
 }
 
